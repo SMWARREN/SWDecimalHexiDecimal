@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Decimal-HexiDecimal Convertor</title>
+      <script src="./dhConvert.javascript"></script>
+      <script src="./testData.javascript"></script>
+      <script src="./inputReader.javascript"></script>
+      <script src="./Util.javascript"></script>
+      <link href="./dhConvert.css" rel="stylesheet">
+   </head>
+   <body>
+     <h1>Decimal-HexiDecimal Convertor</h1>
+      <div class="form">
+         <label for="decimal" class="center">Enter A Decimal Value to Encode:</label>
+         <input id="decimal" name="decimal" type="number" max="8191" min="-8192" class="feedback-input" placeholder="Enter A Decimal Value to Encode" autocomplete="off" maxlength="5" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"/>
+         <button  type='button'id="buttons" onclick="DecimalHexidecimalConvertor.prototype.validateDecimal()">Encode</button>
+         <br>
+         <label for="hexidecimal" class="pull-left">Enter A HiByte to Decode:</label>  <label for="hexidecimal1" class="pull-right">Enter A LoByte to Decode:</label><br>
+         <input id="hexidecimal"  name="hexidecimal" type="text" class="feedback-input" placeholder="HiByte" autocomplete="off" pattern="[0-9A-Fa-f]{2}" style="width: 48%" maxlength="2" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"/><input id="hexidecimal1"  name="hexidecimal1" type="text" class="feedback-input" placeholder="LoByte" autocomplete="off" pattern="[0-9A-Fa-f]{2}" style="margin-left: 5px; width: 50%" maxlength="2" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
+         <button  type='button'id="buttons" onclick="DecimalHexidecimalConvertor.prototype.validateHexidecimal()">Decode</button>
+         <br>
+         <label for="decimal" class="center">Enter A Vector to Decode</label>
+         <input id="vectorInput" name="vectorInput" class="feedback-input" placeholder="Enter A Vector to Decode" />
+         <button  type='button'id="buttons" onclick="VectorInputReader.prototype.convertVectorInput()">Decode</button>
+         <br>
+         <p>
+         <div id="results"></div>
+         </p>
+         <p><div id="testData"><h1><u>Test Data</u></h1></div></p>
+      </div>
+   </body>
+</html>
